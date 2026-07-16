@@ -47,8 +47,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const htmlElement = document.documentElement;
 
     // Load saved theme
-    const savedTheme = localStorage.getItem('portfolio-accent') || 'gold';
-    if (savedTheme === 'silver') {
+    const savedTheme = localStorage.getItem('portfolio-accent') || 'silver';
+    if (savedTheme === 'gold') {
+        htmlElement.removeAttribute('data-theme');
+    } else {
         htmlElement.setAttribute('data-theme', 'silver');
     }
 
