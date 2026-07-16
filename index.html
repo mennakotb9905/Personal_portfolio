@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Menna Kotb - Frontend React & MERN Stack Developer | Programming Instructor. Specialized in web development, AI integration, and teaching. Portfolio featuring premium Navy & Gold/Silver design.">
+    <title>Menna Kotb | Frontend & MERN Developer</title>
+    
+    <!-- Preconnect Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="assets/menna_logo.png">
+</head>
+<body>
+
+    <!-- Grid and Mouse Glow Overlay -->
+    <div class="bg-overlay"></div>
+    <div class="mouse-glow" id="mouse-glow"></div>
+
+    <!-- Custom Trailing Cursor -->
+    <div class="custom-cursor" id="custom-cursor"></div>
+    <div class="custom-cursor-dot" id="custom-cursor-dot"></div>
+
+    <!-- Sticky Header -->
+    <header id="header">
+        <div class="container">
+            <nav>
+                <a href="#" class="logo"><img src="assets/menna_logo.png" alt="Menna Logo" style="height: 90px; vertical-align: middle;"></a>
+                
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#awards">Certificates</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+
+                <div class="theme-switch-container">
+                    <button class="theme-switch-btn" id="theme-switch-btn" aria-label="Toggle between Gold and Silver accent themes">
+                        <!-- Sun Icon (Gold accent mode indicator) -->
+                        <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <line x1="12" y1="1" x2="12" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="23"></line>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                            <line x1="21" y1="12" x2="23" y2="12"></line>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                        </svg>
+                    </button>
+                </div>
+
+                <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Mobile Menu">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        
+        <!-- Hero Section -->
+        <section id="hero" class="hero">
+            <div class="container">
+                <div class="hero-grid">
+                    <div class="hero-content reveal-left">
+                        <span class="hero-subtitle">Welcome to my space</span>
+                        <h1 class="hero-title">Hi, I'm <br><span>Menna Kotb</span></h1>
+                        <h2 class="hero-subtitle" style="font-size: 1.5rem; margin-top: -0.5rem; margin-bottom: 1.5rem; color: var(--text-main);">
+                            I'm a <span id="typewriter" style="color: var(--accent-color); border-right: 2px solid var(--accent-color); padding-right: 5px;"></span>
+                        </h2>
+                        <p class="hero-desc">
+                            Dynamic Frontend React & MERN Stack Developer and AI enthusiast. Building seamless user experiences, conducting international programming sessions, and exploring AI/IoT integration.
+                        </p>
+                        <div class="hero-cta">
+                            <a href="#contact" class="btn btn-primary">Let's Connect</a>
+                            <a href="#projects" class="btn btn-secondary">View Work</a>
+                        </div>
+                    </div>
+                    
+                    <div class="hero-visual reveal-right">
+                        <div class="hero-blob">
+                            <div class="hero-blob-content">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                                    <polyline points="2 17 12 22 22 17"></polyline>
+                                    <polyline points="2 12 12 17 22 12"></polyline>
+                                </svg>
+                                <h3>Full Stack & AI</h3>
+                                <p>Blending React development with AI concepts and IoT applications.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Me Section -->
+        <section id="about">
+            <div class="container">
+                <h2 class="section-title reveal">About <span>Me</span></h2>
+                <div class="about-grid">
+                    
+                    <div class="about-card reveal" data-tilt>
+                        <div class="about-avatar">
+                            <img src="Menna_profile.jpg" alt="Menna Kotb" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <h3>Menna Abdullah Kotb</h3>
+                        <p class="subtitle">Frontend Developer & Instructor</p>
+                        
+                        <ul class="about-meta-list">
+                            <li>
+                                <span class="label">Location</span>
+                                <span class="value">Al Menofia, Egypt</span>
+                            </li>
+                            <li>
+                                <span class="label">Education</span>
+                                <span class="value">Faculty of AI (IoT Student)</span>
+                            </li>
+                            <li>
+                                <span class="label">Email</span>
+                                <span class="value"><a href="mailto:mennakotb9905@gmail.com">mennakotb9905@gmail.com</a></span>
+                            </li>
+                            <li>
+                                <span class="label">Phone</span>
+                                <span class="value"><a href="tel:+201007672467">+20 1007672467</a></span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="about-bio reveal">
+                        <p>
+                            I am a passionate and driven <strong>Frontend Developer</strong> and <strong>AI Enthusiast</strong> with a strong foundation in modern web technologies including React.js, JavaScript (ES6+), HTML5, and CSS3. 
+                        </p>
+                        <p>
+                            Beyond development, I have a deep passion for education. As an online instructor, I conduct live coding sessions teaching students worldwide about web fundamentals and Python programming. I'm also the founder of <strong>Qodeen Academy</strong>, structured to deliver training programs to inspire and equip future developers.
+                        </p>
+                        <p>
+                            Currently, I am pursuing my studies at the <strong>Faculty of Artificial Intelligence (IoT department)</strong> at Menofia National University. I am constantly expanding my technical depth in full-stack development, MERN, and AI integration to build intelligent, scalable solutions.
+                        </p>
+                        
+                        <div style="margin-top: 0.5rem; margin-bottom: 1rem;">
+                            <a href="Menna_Kotb_CV.pdf" download class="btn btn-primary" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.8rem;">
+                                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle;">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    <polyline points="7 10 12 15 17 10"></polyline>
+                                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                                </svg>
+                                Download CV
+                            </a>
+                        </div>
+                        
+                        <div class="about-stats">
+                            <div class="stat-item">
+                                <div class="stat-num" data-val="10">0+</div>
+                                <div class="stat-label">Projects Built</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-num" data-val="3">0+</div>
+                                <div class="stat-label">Years Learning</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-num" data-val="50">0+</div>
+                                <div class="stat-label">Students Mentored</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills">
+            <div class="container">
+                <h2 class="section-title reveal">My <span>Skills</span></h2>
+                <div class="skills-grid">
+                    
+                    <!-- Frontend -->
+                    <div class="skills-category reveal">
+                        <h3 class="skills-category-title">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="16 18 22 12 16 6"></polyline>
+                                <polyline points="8 6 2 12 8 18"></polyline>
+                            </svg>
+                            Frontend Core
+                        </h3>
+                        <div class="skills-list">
+                            <span class="skill-tag">HTML5</span>
+                            <span class="skill-tag">CSS3</span>
+                            <span class="skill-tag">JavaScript (ES6+)</span>
+                            <span class="skill-tag">React.js</span>
+                            <span class="skill-tag">Responsive Web Design</span>
+                            <span class="skill-tag">Bootstrap</span>
+                        </div>
+                    </div>
+
+                    <!-- Backend & Databases -->
+                    <div class="skills-category reveal">
+                        <h3 class="skills-category-title">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                                <path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3"></path>
+                            </svg>
+                            Backend & Database
+                        </h3>
+                        <div class="skills-list">
+                            <span class="skill-tag">MERN Stack</span>
+                            <span class="skill-tag">Node.js</span>
+                            <span class="skill-tag">Express.js</span>
+                            <span class="skill-tag">MongoDB</span>
+                            <span class="skill-tag">Flask</span>
+                            <span class="skill-tag">SQL Databases</span>
+                        </div>
+                    </div>
+
+                    <!-- AI, Mobile & Core -->
+                    <div class="skills-category reveal">
+                        <h3 class="skills-category-title">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                                <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                                <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                            </svg>
+                            AI, Mobile & Tools
+                        </h3>
+                        <div class="skills-list">
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">Machine Learning</span>
+                            <span class="skill-tag">Dart</span>
+                            <span class="skill-tag">Flutter App Dev</span>
+                            <span class="skill-tag">OOP / Design Patterns</span>
+                            <span class="skill-tag">Git & GitHub</span>
+                            <span class="skill-tag">AI Tools Integration</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Showcase -->
+        <section id="projects">
+            <div class="container">
+                <h2 class="section-title reveal">My <span>Projects</span></h2>
+
+                <div class="projects-grid">
+                    
+                    <!-- IoT Smart Parking System -->
+                    <div class="project-card reveal" data-category="featured" data-tilt>
+                        <div class="project-img-wrapper">
+                            <img src="assets/iot_parking.png" alt="IoT Parking Dashboard Screenshot" class="project-img">
+                            <div class="project-links">
+                                <a href="https://github.com/mennakotb9905/Iot_parking_system" target="_blank" class="project-link-icon" aria-label="View Code on GitHub">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                                    </svg>
+                                </a>
+                                <a href="https://smart-parking-system-lilac.vercel.app/" target="_blank" class="project-link-icon" aria-label="View Demo">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                        <polyline points="15 3 21 3 21 9"></polyline>
+                                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-tags">
+                                <span class="project-tag">ESP32 IoT</span>
+                                <span class="project-tag">MQTT Protocol</span>
+                                <span class="project-tag">HTML5/CSS3/JS</span>
+                            </div>
+                            <h3 class="project-title">Smart Parking System</h3>
+                            <p class="project-desc">
+                                Real-time IoT operations control room dashboard connected via HiveMQ MQTT broker, displaying live slot availability and gate movements tracked by ESP32 sensors.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Savore Resturant -->
+                    <div class="project-card reveal" data-category="featured" data-tilt>
+                        <div class="project-img-wrapper">
+                            <img src="assets/savore_restaurant.png" alt="Savore Restaurant Screenshot" class="project-img">
+                            <div class="project-links">
+                                <a href="https://github.com/mennakotb9905" target="_blank" class="project-link-icon" aria-label="View Code on GitHub">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                                    </svg>
+                                </a>
+                                <a href="https://savore-pink.vercel.app/" target="_blank" class="project-link-icon" aria-label="View Demo">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                        <polyline points="15 3 21 3 21 9"></polyline>
+                                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-tags">
+                                <span class="project-tag">HTML5/CSS3</span>
+                                <span class="project-tag">Bootstrap</span>
+                                <span class="project-tag">JavaScript</span>
+                            </div>
+                            <h3 class="project-title">Savore Resturant</h3>
+                            <p class="project-desc">
+                                Responsive restaurant web application designed as the graduation project for the ITI Yellow Belt program, using custom grids and active sliders.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Tailor Template Website -->
+                    <div class="project-card reveal" data-category="coursework" data-tilt>
+                        <div class="project-img-wrapper">
+                            <img src="assets/tailor_template.png" alt="Tailor Template Screenshot" class="project-img">
+                            <div class="project-links">
+                                <a href="https://github.com/mennakotb9905/talior." target="_blank" class="project-link-icon" aria-label="View Code on GitHub">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                                    </svg>
+                                </a>
+                                <a href="https://mennakotb9905.github.io/talior./" target="_blank" class="project-link-icon" aria-label="View Demo">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                        <polyline points="15 3 21 3 21 9"></polyline>
+                                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-tags">
+                                <span class="project-tag">HTML5/CSS3</span>
+                                <span class="project-tag">ITI Belt Level 1</span>
+                            </div>
+                            <h3 class="project-title">Tailor Template</h3>
+                            <p class="project-desc">
+                                Modern, responsive tailoring business landing page created as a training requirement during the ITI Belts program.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Movies Website -->
+                    <div class="project-card reveal" data-category="featured" data-tilt>
+                        <div class="project-img-wrapper">
+                            <img src="assets/movies_website.png" alt="Movies Website Screenshot" class="project-img">
+                            <div class="project-links">
+                                <a href="https://github.com/mennakotb9905/movies-app" target="_blank" class="project-link-icon" aria-label="View Code on GitHub">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                                    </svg>
+                                </a>
+                                <a href="https://mennakotb9905.github.io/movies-app/" target="_blank" class="project-link-icon" aria-label="View Demo">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                        <polyline points="15 3 21 3 21 9"></polyline>
+                                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-tags">
+                                <span class="project-tag">HTML5</span>
+                                <span class="project-tag">CSS Grid</span>
+                                <span class="project-tag">JS App</span>
+                            </div>
+                            <h3 class="project-title">Movies Website</h3>
+                            <p class="project-desc">
+                                Fully responsive browsing experience for listings categorized by genre, highlighting movie details and custom visual components.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Landing page -->
+                    <div class="project-card reveal" data-category="responsive" data-tilt>
+                        <div class="project-img-wrapper">
+                            <img src="assets/landing_page.png" alt="Landing Page Screenshot" class="project-img">
+                            <div class="project-links">
+                                <a href="https://github.com/mennakotb9905/landing_pages" target="_blank" class="project-link-icon" aria-label="View Code on GitHub">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                                    </svg>
+                                </a>
+                                <a href="https://mennakotb9905.github.io/landing_pages/" target="_blank" class="project-link-icon" aria-label="View Demo">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                        <polyline points="15 3 21 3 21 9"></polyline>
+                                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-tags">
+                                <span class="project-tag">Semantic HTML</span>
+                                <span class="project-tag">Flexbox/Grid</span>
+                            </div>
+                            <h3 class="project-title">Landing_page</h3>
+                            <p class="project-desc">
+                                Responsive collection of landing pages built during the Web Master Internship, prioritizing clean flex layouts and high adaptability.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Jadoo Page -->
+                    <div class="project-card reveal" data-category="responsive" data-tilt>
+                        <div class="project-img-wrapper">
+                            <img src="assets/jadoo_page.png" alt="Jadoo Agency Page Screenshot" class="project-img">
+                            <div class="project-links">
+                                <a href="https://github.com/mennakotb9905/Jadoo-page" target="_blank" class="project-link-icon" aria-label="View Code on GitHub">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                                    </svg>
+                                </a>
+                                <a href="https://mennakotb9905.github.io/Jadoo-page/" target="_blank" class="project-link-icon" aria-label="View Demo">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                        <polyline points="15 3 21 3 21 9"></polyline>
+                                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-tags">
+                                <span class="project-tag">Pure CSS</span>
+                                <span class="project-tag">Hierarchy Design</span>
+                            </div>
+                            <h3 class="project-title">Jadoo Agency Page</h3>
+                            <p class="project-desc">
+                                Modern, responsive travel agency layout developed using standard pure CSS layouts, highlighting custom grids and micro-interactions.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- HTML Hub -->
+                    <div class="project-card reveal" data-category="coursework" data-tilt>
+                        <div class="project-img-wrapper">
+                            <img src="assets/html_hub.png" alt="HTML-HUB Screenshot" class="project-img">
+                            <div class="project-links">
+                                <a href="https://github.com/mennakotb9905/HTML-Hub" target="_blank" class="project-link-icon" aria-label="View Code on GitHub">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                                    </svg>
+                                </a>
+                                <a href="https://mennakotb9905.github.io/HTML-Hub/" target="_blank" class="project-link-icon" aria-label="View Demo">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                        <polyline points="15 3 21 3 21 9"></polyline>
+                                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-tags">
+                                <span class="project-tag">HTML5</span>
+                                <span class="project-tag">Bootstrap</span>
+                            </div>
+                            <h3 class="project-title">HTML-HUB</h3>
+                            <p class="project-desc">
+                                Educational HTML resource guide built during front-end training, utilizing semantic markup and Bootstrap for high accessibility and layouts without any JS dependencies.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Ramadan Table -->
+                    <div class="project-card reveal" data-category="featured" data-tilt>
+                        <div class="project-img-wrapper">
+                            <img src="assets/ramadan_table.png" alt="Ramadan Table Screenshot" class="project-img">
+                            <div class="project-links">
+                                <a href="https://github.com/mennakotb9905/ramadan_table" target="_blank" class="project-link-icon" aria-label="View Code on GitHub">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                                    </svg>
+                                </a>
+                                <a href="https://mennakotb9905.github.io/ramadan_table/" target="_blank" class="project-link-icon" aria-label="View Demo">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                        <polyline points="15 3 21 3 21 9"></polyline>
+                                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-tags">
+                                <span class="project-tag">HTML5</span>
+                                <span class="project-tag">CSS3</span>
+                                <span class="project-tag">JS LocalStorage</span>
+                            </div>
+                            <h3 class="project-title">Ramadan Table</h3>
+                            <p class="project-desc">
+                                Interactive, responsive Ramadan schedule webpage allowing users to log, save, and track their progressive goals locally on their browsers.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Professional Experience Section -->
+        <section id="experience">
+            <div class="container">
+                <h2 class="section-title reveal">Professional <span>Experience</span></h2>
+                
+                <div class="timeline">
+                    
+                    <!-- Freelance -->
+                    <div class="timeline-item reveal">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">04/2024 - Present</div>
+                            <h3 class="timeline-job-title">Freelance Frontend Developer</h3>
+                            <div class="timeline-org">Independent Projects</div>
+                            <div class="timeline-desc">
+                                <ul>
+                                    <li>Designing and developing responsive Web applications using React.js.</li>
+                                    <li>Creating visually appealing and user-friendly layouts mapped to client brand guidelines.</li>
+                                    <li>Collaborating with clients to understand requirements and deliver customized solutions.</li>
+                                    <li>Delivering projects on schedule while maintaining strict quality and performance standards.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Instructor -->
+                    <div class="timeline-item reveal">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">01/2025 - Present</div>
+                            <h3 class="timeline-job-title">Independent Programming Instructor</h3>
+                            <div class="timeline-org">Online Educator</div>
+                            <div class="timeline-desc">
+                                <ul>
+                                    <li>Conducting structured online programming sessions for students globally, focusing on Web Development fundamentals and Python Programming.</li>
+                                    <li>Communicating complex concepts in English clearly to international and non-native learners.</li>
+                                    <li>Supporting students through review, code debugging, and step-by-step project walkthroughs to build confidence.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Founder -->
+                    <div class="timeline-item reveal">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">11/2025 - Present</div>
+                            <h3 class="timeline-job-title">Founder</h3>
+                            <div class="timeline-org">Qodeen Academy</div>
+                            <div class="timeline-desc">
+                                <ul>
+                                    <li>Founded an educational academy for teaching modern programming and full-stack web development.</li>
+                                    <li>Designed and delivered custom training workflows and learning paths for students.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Trainee -->
+                    <div class="timeline-item reveal">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">05/2025 - 09/2025</div>
+                            <h3 class="timeline-job-title">Frontend Developer Trainee</h3>
+                            <div class="timeline-org">Web Master Company</div>
+                            <div class="timeline-desc">
+                                <ul>
+                                    <li>Participated in an intensive training schedule focused on mastering core web development technologies.</li>
+                                    <li>Blended theoretical concepts with hand-on project building to produce production-grade frontend layouts.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Awards / Certifications Section -->
+        <section id="awards">
+            <div class="container">
+                <h2 class="section-title reveal">Awards & <span>Certificates</span></h2>
+                
+                <div class="awards-grid">
+                    
+                    <!-- College Rank -->
+                    <div class="award-card reveal">
+                        <div class="award-icon-box">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="8" r="7"></circle>
+                                <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                            </svg>
+                        </div>
+                        <div class="award-info">
+                            <h3 class="award-title">Ranked 5th in College (IoT Department)</h3>
+                            <span class="award-issuer">Faculty of Artificial Intelligence, Menofia National University</span>
+                            <span class="award-date">2024 - 2025 Academic Year</span>
+                            <a href="certificates/college_5th.pdf" target="_blank" class="award-link">
+                                <span>View Certificate</span>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                                    <polyline points="7 7 17 7 17 17"></polyline>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Web Master Internship -->
+                    <div class="award-card reveal">
+                        <div class="award-icon-box">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="8" r="7"></circle>
+                                <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                            </svg>
+                        </div>
+                        <div class="award-info">
+                            <h3 class="award-title">Frontend Developer Trainee Internship</h3>
+                            <span class="award-issuer">Web Master Company</span>
+                            <span class="award-date">May 2025 - September 2025</span>
+                            <a href="certificates/webmaster_internship.pdf" target="_blank" class="award-link">
+                                <span>View Certificate</span>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                                    <polyline points="7 7 17 7 17 17"></polyline>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- ITI React -->
+                    <div class="award-card reveal">
+                        <div class="award-icon-box">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="8" r="7"></circle>
+                                <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                            </svg>
+                        </div>
+                        <div class="award-info">
+                            <h3 class="award-title">Front-End Development using React</h3>
+                            <span class="award-issuer">Information Technology Institute (ITI)</span>
+                            <span class="award-date">September 2024</span>
+                            <a href="certificates/iti_react.pdf" target="_blank" class="award-link">
+                                <span>View Certificate</span>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                                    <polyline points="7 7 17 7 17 17"></polyline>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- ITI MERN -->
+                    <div class="award-card reveal">
+                        <div class="award-icon-box">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="8" r="7"></circle>
+                                <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                            </svg>
+                        </div>
+                        <div class="award-info">
+                            <h3 class="award-title">MERN Stack - Yellow Belts (1st Level)</h3>
+                            <span class="award-issuer">Information Technology Institute (ITI)</span>
+                            <span class="award-date">November 2025</span>
+                            <a href="certificates/iti_belts_phase1.jpg" target="_blank" class="award-link">
+                                <span>View Certificate</span>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                                    <polyline points="7 7 17 7 17 17"></polyline>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Johns Hopkins -->
+                    <div class="award-card reveal">
+                        <div class="award-icon-box">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="8" r="7"></circle>
+                                <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                            </svg>
+                        </div>
+                        <div class="award-info">
+                            <h3 class="award-title">HTML, CSS, and JS for Web Developers</h3>
+                            <span class="award-issuer">Johns Hopkins University (Coursera)</span>
+                            <span class="award-date">November 2024</span>
+                            <a href="certificates/web_development.pdf" target="_blank" class="award-link">
+                                <span>View Certificate</span>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                                    <polyline points="7 7 17 7 17 17"></polyline>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Coursera CSS3 -->
+                    <div class="award-card reveal">
+                        <div class="award-icon-box">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="8" r="7"></circle>
+                                <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                            </svg>
+                        </div>
+                        <div class="award-info">
+                            <h3 class="award-title">Introduction to CSS3</h3>
+                            <span class="award-issuer">Microsoft & Johns Hopkins (Coursera)</span>
+                            <span class="award-date">December 2024</span>
+                            <a href="certificates/css_development.pdf" target="_blank" class="award-link">
+                                <span>View Certificate</span>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                                    <polyline points="7 7 17 7 17 17"></polyline>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Google Cloud Dart -->
+                    <div class="award-card reveal">
+                        <div class="award-icon-box">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="8" r="7"></circle>
+                                <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                            </svg>
+                        </div>
+                        <div class="award-info">
+                            <h3 class="award-title">Introduction to Dart</h3>
+                            <span class="award-issuer">Google Cloud (Coursera)</span>
+                            <span class="award-date">February 2025</span>
+                            <a href="certificates/dart.pdf" target="_blank" class="award-link">
+                                <span>View Certificate</span>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                                    <polyline points="7 7 17 7 17 17"></polyline>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- AI Masterclass -->
+                    <div class="award-card reveal">
+                        <div class="award-icon-box">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="8" r="7"></circle>
+                                <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                            </svg>
+                        </div>
+                        <div class="award-info">
+                            <h3 class="award-title">AI Master Class Workshop</h3>
+                            <span class="award-issuer">Skill Tech</span>
+                            <span class="award-date">February 2025</span>
+                            <a href="certificates/ai_masterclass.pdf" target="_blank" class="award-link">
+                                <span>View Certificate</span>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                                    <polyline points="7 7 17 7 17 17"></polyline>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <div class="container">
+                <h2 class="section-title reveal">Get in <span>Touch</span></h2>
+                <div class="contact-grid">
+                    
+                    <div class="contact-info reveal">
+                        <h3>Let's talk about your next project!</h3>
+                        <p style="color: var(--text-muted);">
+                            Whether you want to build a custom responsive React app, integrate intelligent AI interfaces, or collaborate on tech education — drop a message.
+                        </p>
+                        
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <div class="contact-icon-box">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                        <polyline points="22,6 12,13 2,6"></polyline>
+                                    </svg>
+                                </div>
+                                <div class="contact-text">
+                                    <h4>Email</h4>
+                                    <p><a href="mailto:mennakotb9905@gmail.com">mennakotb9905@gmail.com</a></p>
+                                </div>
+                            </div>
+
+                            <div class="contact-item">
+                                <div class="contact-icon-box">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                                    </svg>
+                                </div>
+                                <div class="contact-text">
+                                    <h4>Phone</h4>
+                                    <p><a href="tel:+201007672467">+20 1007672467</a></p>
+                                </div>
+                            </div>
+
+                            <div class="contact-item">
+                                <div class="contact-icon-box">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                        <circle cx="12" cy="10" r="3"></circle>
+                                    </svg>
+                                </div>
+                                <div class="contact-text">
+                                    <h4>Location</h4>
+                                    <p>Al Menofia, Egypt</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="social-links">
+                            <a href="https://github.com/mennakotb9905" target="_blank" class="social-icon" aria-label="GitHub">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                                </svg>
+                            </a>
+                            <a href="https://www.linkedin.com/in/menna-kotb-a4b055323?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" class="social-icon" aria-label="LinkedIn">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                    <rect x="2" y="9" width="4" height="12"></rect>
+                                    <circle cx="4" cy="4" r="2"></circle>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="contact-form reveal">
+                        <form id="portfolio-contact-form" autocomplete="off">
+                            <div class="form-group">
+                                <input type="text" id="name" name="name" class="form-input" placeholder=" " required>
+                                <label for="name" class="form-label">Full Name</label>
+                            </div>
+                            
+                            <div class="form-group">
+                                <input type="email" id="email" name="email" class="form-input" placeholder=" " required>
+                                <label for="email" class="form-label">Email Address</label>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="text" id="subject" name="subject" class="form-input" placeholder=" " required>
+                                <label for="subject" class="form-label">Subject</label>
+                            </div>
+
+                            <div class="form-group">
+                                <textarea id="message" name="message" class="form-input form-textarea" placeholder=" " required></textarea>
+                                <label for="message" class="form-label">Your Message</label>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                            <div class="form-status" id="form-status"></div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+
+
+    <!-- JavaScript File -->
+    <script src="script.js"></script>
+</body>
+</html>

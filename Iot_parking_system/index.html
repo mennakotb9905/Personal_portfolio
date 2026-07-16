@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smart Parking Dashboard</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mqtt/5.3.4/mqtt.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css" rel="stylesheet">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+<link rel="stylesheet" href="style.css">
+<script defer src="credentials.js"></script>
+<script defer src="script.js"></script>
+</head>
+<body data-theme="dark">
+<section class="login-screen" id="loginScreen">
+  <div class="login-shell">
+    <div class="login-brand">
+      <div class="brand-icon login-logo"><img src="logo_icon.png" alt="Smart Parking Logo" class="brand-img"></div>
+      <div>
+        <div class="login-kicker">Secure IoT Access</div>
+        <h1>Smart Parking Control Room</h1>
+        <p>Animated operator login for your ESP32 dashboard, with saved theme preference and a polished automation scan before access.</p>
+      </div>
+    </div>
+
+    <form class="login-card" id="loginForm" autocomplete="off">
+      <div class="login-card-head">
+        <div>
+          <div class="card-title"><i class="ti ti-lock-access"></i> Operator Login</div>
+          <div class="card-sub">Use an account from credentials.js</div>
+        </div>
+        <button class="icon-btn theme-toggle" type="button" id="themeToggle" aria-label="Toggle theme" title="Toggle theme">
+          <i class="ti ti-sun-moon"></i>
+        </button>
+      </div>
+
+      <div class="scan-panel" aria-hidden="true">
+        <div class="scan-grid"></div>
+        <div class="scan-beam"></div>
+        <div class="scan-core"><i class="ti ti-fingerprint"></i></div>
+      </div>
+
+      <label class="field-label" for="username">Username</label>
+      <div class="input-wrap">
+        <i class="ti ti-user-shield"></i>
+        <input id="username" name="username" type="text" placeholder="Enter username" required>
+      </div>
+
+      <label class="field-label" for="password">Password</label>
+      <div class="input-wrap">
+        <i class="ti ti-key"></i>
+        <input id="password" name="password" type="password" placeholder="Enter password" required>
+      </div>
+
+      <button class="login-btn" id="loginBtn" type="submit">
+        <span class="login-btn-text">Start Secure Automation</span>
+        <i class="ti ti-arrow-right"></i>
+      </button>
+      <div class="login-message" id="loginMessage">System ready for authentication.</div>
+    </form>
+  </div>
+</section>
+
+<div class="page app-page" id="appPage" hidden>
+
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-icon"><img src="logo_icon.png" alt="Smart Parking Logo" class="brand-img"></div>
+      <div class="brand-copy">
+        <div class="brand-name">Smart Parking System</div>
+        <div class="brand-sub">ESP32 IoT - broker.hivemq.com - parking/data</div>
+      </div>
+    </div>
+    <div class="top-actions">
+      <button class="icon-btn theme-toggle" type="button" id="appThemeToggle" aria-label="Toggle theme" title="Toggle theme">
+        <i class="ti ti-sun-moon"></i>
+      </button>
+      <button class="icon-btn logout-btn" type="button" id="logoutBtn" aria-label="Logout" title="Logout">
+        <i class="ti ti-logout"></i>
+      </button>
+      <div class="conn-pill connecting" id="connPill">
+        <span class="conn-dot"></span>
+        <span id="connText">Connecting...</span>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-panel">
+      <div class="eyebrow"><i class="ti ti-radar"></i> Live Parking Control</div>
+      <h1>Monitor every slot and gate movement in real time.</h1>
+      <p class="hero-text">A polished navy operations dashboard for your ESP32 parking project, with live MQTT readings, clear slot states, and a stronger presentation for reports or demos.</p>
+      <div class="hero-metrics">
+        <span class="metric-chip"><i class="ti ti-broadcast"></i> MQTT live feed</span>
+        <span class="metric-chip"><i class="ti ti-shield-check"></i> Gate tracking</span>
+        <span class="metric-chip"><i class="ti ti-map-2"></i> 4-slot lot map</span>
+      </div>
+    </div>
+
+    <aside class="system-panel">
+      <div>
+        <div class="system-title">Connection Endpoint</div>
+        <div class="system-value">wss://broker.hivemq.com:8884/mqtt</div>
+      </div>
+      <div class="status-stack">
+        <div class="status-line"><span>Topic</span><strong>parking/data</strong></div>
+        <div class="status-line"><span>Total capacity</span><strong>4 slots</strong></div>
+        <div class="status-line"><span>Controller</span><strong>ESP32</strong></div>
+      </div>
+    </aside>
+  </section>
+
+  <section class="kpi-row">
+    <div class="kpi">
+      <div class="kpi-top">
+        <div class="kpi-icon"><i class="ti ti-parking" style="color:var(--cyan)"></i></div>
+        <div class="kpi-lbl">Available</div>
+      </div>
+      <div class="kpi-val" id="kAvail">-</div>
+      <div class="kpi-note">Free parking slots</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-top">
+        <div class="kpi-icon"><i class="ti ti-car" style="color:var(--red)"></i></div>
+        <div class="kpi-lbl">Occupied</div>
+      </div>
+      <div class="kpi-val" id="kOcc">-</div>
+      <div class="kpi-note">Cars currently parked</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-top">
+        <div class="kpi-icon"><i class="ti ti-chart-pie" style="color:var(--green)"></i></div>
+        <div class="kpi-lbl">Utilization</div>
+      </div>
+      <div class="kpi-val" id="kCap">-</div>
+      <div class="kpi-note">Current lot usage</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-top">
+        <div class="kpi-icon"><i class="ti ti-door" style="color:var(--amber)"></i></div>
+        <div class="kpi-lbl">Gate</div>
+      </div>
+      <div class="kpi-val" id="kGate" style="font-size:24px;padding-top:7px">-</div>
+      <div class="kpi-note">Barrier state</div>
+    </div>
+  </section>
+
+  <section class="main-grid">
+    <div class="card">
+      <div class="card-head">
+        <div>
+          <div class="card-title"><i class="ti ti-map-pin"></i> Parking Lot Map</div>
+          <div class="card-sub">Slot status updates from available capacity</div>
+        </div>
+        <span class="full-badge" id="fullBadge">Full</span>
+      </div>
+      <div class="lot" id="lotGrid">
+        <div class="slot free"><i class="ti ti-parking"></i><div class="slot-num">Slot A1</div><div class="slot-badge">Waiting...</div></div>
+        <div class="slot free"><i class="ti ti-parking"></i><div class="slot-num">Slot A2</div><div class="slot-badge">Waiting...</div></div>
+        <div class="slot free"><i class="ti ti-parking"></i><div class="slot-num">Slot B1</div><div class="slot-badge">Waiting...</div></div>
+        <div class="slot free"><i class="ti ti-parking"></i><div class="slot-num">Slot B2</div><div class="slot-badge">Waiting...</div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head">
+        <div>
+          <div class="card-title"><i class="ti ti-barrier-block"></i> Gate Status</div>
+          <div class="card-sub">Barrier movement and pass-through state</div>
+        </div>
+      </div>
+      <div class="gate-body">
+        <div>
+          <div class="gate-ring closed" id="gateRing">
+            <i class="ti ti-barrier-block" id="gateIco"></i>
+          </div>
+          <div class="gate-lbl closed" id="gateLbl">Waiting...</div>
+          <div class="gate-hint" id="gateHint">Connecting to ESP32</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="assistant-band">
+    <div class="assistant-copy">
+      <div class="card-title"><i class="ti ti-sparkles"></i> Smart Arrival Assistant</div>
+      <div class="card-sub">Bonus feature: automatic slot recommendation and crowd warning from live MQTT data</div>
+    </div>
+    <div class="assistant-grid">
+      <div class="assistant-stat"><span>Best slot</span><strong id="bestSlot">Waiting</strong></div>
+      <div class="assistant-stat"><span>Traffic mood</span><strong id="trafficMood">Calibrating</strong></div>
+      <div class="assistant-stat"><span>Next action</span><strong id="nextAction">Connect ESP32</strong></div>
+    </div>
+  </section>
+
+  <section class="log-card">
+    <div class="card-title"><i class="ti ti-list"></i> Event Log</div>
+    <div class="log-list" id="logList"></div>
+  </section>
+
+  <div class="mqtt-strip">
+    <div class="mqtt-l">
+      <i class="ti ti-antenna"></i>
+      Last message on <strong>parking/data</strong>
+    </div>
+    <div class="mqtt-payload" id="mqttPayload">Waiting for data...</div>
+  </div>
+
+</div>
+</body>
+</html>
+
+
+
